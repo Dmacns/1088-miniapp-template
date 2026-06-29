@@ -1,0 +1,403 @@
+@use '@/styles/variables.scss' as *;
+
+.sellerPage {
+  min-height: 100vh;
+  padding: 0 $page-padding;
+  padding-bottom: 120rpx;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-md 0;
+}
+
+.title {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.addBtn {
+  @include button-reset;
+  height: $button-height-sm;
+  min-width: 160rpx;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-text-white;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  border-radius: $radius-button;
+  border: none;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.sectionTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin: $spacing-md 0 $spacing-sm;
+}
+
+.productList {
+  margin-top: $spacing-sm;
+}
+
+.productCard {
+  background-color: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  margin-bottom: $spacing-sm;
+  box-shadow: $shadow-card;
+  display: flex;
+  gap: $spacing-md;
+
+  &:active {
+    opacity: 0.9;
+  }
+}
+
+.productImage {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: $radius-sm;
+  flex-shrink: 0;
+}
+
+.productInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.productName {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  @include text-ellipsis-multi(1);
+}
+
+.productPrice {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-price;
+}
+
+.productMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.productStock {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.productStatus {
+  font-size: $font-size-xs;
+  padding: 4rpx 16rpx;
+  border-radius: $radius-round;
+  background-color: $color-tag-bg;
+  color: $color-primary;
+}
+
+.cardActions {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+  justify-content: center;
+  margin-left: $spacing-sm;
+}
+
+.editBtn {
+  @include button-reset;
+  height: 48rpx;
+  padding: 0 20rpx;
+  background-color: $color-bg-hover;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+
+  &:active { opacity: 0.7; }
+}
+
+.delBtn {
+  @include button-reset;
+  height: 48rpx;
+  padding: 0 20rpx;
+  background-color: transparent;
+  border: 1px solid $color-error;
+  border-radius: $radius-sm;
+
+  &:active { opacity: 0.7; }
+}
+
+.emptyIcon {
+  font-size: 80rpx;
+  margin-bottom: $spacing-sm;
+}
+
+.emptyHint {
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  margin-top: $spacing-xs;
+}
+
+.negoSection {
+  margin-top: $spacing-lg;
+}
+
+.negoCard {
+  background-color: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  margin-bottom: $spacing-sm;
+  box-shadow: $shadow-card;
+}
+
+.negoHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-sm;
+}
+
+.negoSku {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+}
+
+.negoStatus {
+  font-size: $font-size-xs;
+  padding: 4rpx 16rpx;
+  border-radius: $radius-round;
+}
+
+.negoPending {
+  background-color: rgba(255, 125, 0, 0.15);
+  color: #ff7d00;
+}
+
+.negoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-xs 0;
+}
+
+.negoLabel {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.negoValue {
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+}
+
+.negoActions {
+  display: flex;
+  gap: $spacing-sm;
+  margin-top: $spacing-sm;
+}
+
+.negoBtn {
+  @include button-reset;
+  flex: 1;
+  height: $button-height-sm;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  border-radius: $radius-button;
+  border: none;
+
+  &:active {
+    opacity: 0.9;
+  }
+}
+
+.acceptBtn {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-text-white;
+}
+
+.rejectBtn {
+  background-color: transparent;
+  color: $color-error;
+  border: 1px solid $color-error;
+}
+
+.counterBtn {
+  background-color: transparent;
+  color: $color-primary;
+  border: 1px solid $color-primary;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 120rpx;
+}
+
+.emptyText {
+  font-size: $font-size-md;
+  color: $color-text-tertiary;
+  margin-top: $spacing-md;
+}
+
+// 发布弹窗
+.publishModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+}
+
+.publishMask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.publishPanel {
+  position: relative;
+  width: 100%;
+  max-height: 85vh;
+  background-color: $color-bg-card;
+  border-radius: 24rpx 24rpx 0 0;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 140rpx;
+}
+
+.publishHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx $spacing-md;
+  border-bottom: 1px solid $color-divider;
+  flex-shrink: 0;
+}
+
+.publishTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.publishClose {
+  font-size: 36rpx;
+  color: $color-text-tertiary;
+  padding: 8rpx;
+  &:active { opacity: 0.7; }
+}
+
+.publishBody {
+  padding: $spacing-md;
+  max-height: calc(85vh - 200rpx);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.uploadBtn {
+  @include button-reset;
+  height: 56rpx;
+  padding: 0 24rpx;
+  background-color: $color-bg-hover;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:active { opacity: 0.7; }
+}
+
+.formGroup {
+  margin-bottom: $spacing-md;
+}
+
+.formLabel {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-xs;
+  display: block;
+}
+
+.formInput {
+  width: 100%;
+  height: 72rpx;
+  background-color: $color-bg-input;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  padding: 0 $spacing-md;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  box-sizing: border-box;
+}
+
+.formTextarea {
+  width: 100%;
+  height: 140rpx;
+  background-color: $color-bg-input;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  box-sizing: border-box;
+}
+
+.publishFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: $spacing-md;
+  padding: $spacing-md;
+  border-top: 1px solid $color-divider;
+  background-color: $color-bg-card;
+}
+
+.publishCancel {
+  @include button-reset;
+  flex: 1;
+  height: 80rpx;
+  border: 1px solid $color-border;
+  border-radius: $radius-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:active { opacity: 0.8; }
+}
+
+.publishConfirm {
+  @include button-reset;
+  flex: 2;
+  height: 80rpx;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  border-radius: $radius-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:active { opacity: 0.9; }
+}

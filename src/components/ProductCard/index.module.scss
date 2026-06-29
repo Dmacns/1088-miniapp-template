@@ -1,0 +1,114 @@
+@use '@/styles/variables.scss' as *;
+
+.card {
+  width: 100%;
+  background: #fff;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.06);
+  
+  &:active {
+    transform: scale(0.97);
+    box-shadow: 0 4rpx 16rpx rgba(0,0,0,0.12);
+  }
+}
+
+.imgWrap {
+  position: relative;
+  width: 100%;
+  height: 280rpx;
+  background: #f1f5f9;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.stockBadge {
+  position: absolute;
+  top: 12rpx;
+  right: 12rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 12rpx;
+}
+
+.stockOk {
+  background: rgba(22,163,74,0.12);
+  .stockText { color: #16a34a; }
+}
+
+.stockLow {
+  background: rgba(234,88,12,0.12);
+  .stockText { color: #ea580c; }
+}
+
+.stockOut {
+  background: rgba(220,38,38,0.12);
+  .stockText { color: #dc2626; }
+}
+
+.stockText {
+  font-size: 20rpx;
+  font-weight: 500;
+}
+
+.info {
+  padding: 16rpx 20rpx 20rpx;
+}
+
+.name {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: $color-text-primary;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 72rpx;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  margin-top: 10rpx;
+}
+
+.price {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: $color-primary;
+}
+
+.unit {
+  font-size: 22rpx;
+  color: $color-text-tertiary;
+  margin-left: 4rpx;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.location {
+  font-size: 22rpx;
+  color: $color-text-tertiary;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.seller {
+  font-size: 20rpx;
+  color: $color-primary;
+  background: rgba(184,134,11,0.08);
+  padding: 2rpx 10rpx;
+  border-radius: 8rpx;
+  flex-shrink: 0;
+  margin-left: 8rpx;
+}

@@ -1,0 +1,27 @@
+@use '@/styles/variables.scss' as *;
+
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: 6rpx 16rpx;
+  background-color: $color-bg-card;
+  border-radius: $radius-round;
+  border: 1px solid $color-border;
+}
+
+.dot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+}
+
+.label {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+}
+
+.height {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}

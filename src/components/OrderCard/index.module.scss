@@ -1,0 +1,86 @@
+@use '@/styles/variables.scss' as *;
+
+.card {
+  background-color: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  margin-bottom: $spacing-sm;
+  box-shadow: $shadow-card;
+
+  &:active {
+    opacity: 0.9;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-sm;
+}
+
+.orderId {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.status {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+}
+
+.body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.productName {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+  @include text-ellipsis;
+  flex: 1;
+  margin-right: $spacing-sm;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.qty {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.total {
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  color: $color-price;
+}
+
+.time {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  margin-top: $spacing-xs;
+  display: block;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: $spacing-sm;
+  margin-top: $spacing-sm;
+  padding-top: $spacing-sm;
+  border-top: 1px solid $color-divider;
+}
+
+.actionBtn {
+  @include button-reset;
+  padding: 8rpx 24rpx;
+  border: 1px solid $color-border;
+  border-radius: $radius-button;
+  &:active { opacity: 0.8; }
+}

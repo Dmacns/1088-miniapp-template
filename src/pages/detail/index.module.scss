@@ -1,0 +1,591 @@
+@use '@/styles/variables.scss' as *;
+
+.detailPage {
+  min-height: 100vh;
+  padding-bottom: 140rpx;
+  position: relative;
+}
+
+.backBtn {
+  position: fixed;
+  top: 20rpx;
+  left: 24rpx;
+  z-index: 100;
+  width: 72rpx;
+  height: 72rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.backIcon {
+  color: #fff;
+  font-size: 36rpx;
+}
+
+.heroImage {
+  width: 100%;
+  height: 600rpx;
+  display: block;
+}
+
+.content {
+  padding: $spacing-lg $page-padding;
+}
+
+.name {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  line-height: $line-height-tight;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  margin-top: $spacing-sm;
+}
+
+.price {
+  font-size: 56rpx;
+  font-weight: $font-weight-bold;
+  color: $color-price;
+}
+
+.unit {
+  font-size: $font-size-md;
+  color: $color-text-tertiary;
+  margin-left: 8rpx;
+}
+
+.stock {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin-top: $spacing-xs;
+  display: block;
+}
+
+.infoCard {
+  background-color: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  margin-top: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-sm 0;
+  border-bottom: 1px solid $color-divider;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.infoLabel {
+  font-size: $font-size-md;
+  color: $color-text-secondary;
+}
+
+.infoValue {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+}
+
+.qtyControl {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.qtyBtn {
+  @include button-reset;
+  width: 64rpx;
+  height: 64rpx;
+  background-color: $color-bg-hover;
+  border-radius: $radius-md;
+  border: 1px solid $color-border;
+  color: $color-text-primary;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.qtyValue {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  min-width: 60rpx;
+  text-align: center;
+}
+
+.descCard {
+  background-color: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  margin-top: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.descTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+}
+
+.descText {
+  font-size: $font-size-md;
+  color: $color-text-secondary;
+  line-height: $line-height-loose;
+}
+
+.bottomBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding: $spacing-md $page-padding;
+  background-color: $color-bg-card;
+  border-top: 1px solid $color-border;
+  box-shadow: $shadow-float;
+}
+
+.totalSection {
+  flex: 1;
+}
+
+.totalLabel {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.totalPrice {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-price;
+  margin-left: $spacing-xs;
+}
+
+.btnRow {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  flex-shrink: 0;
+}
+
+.negoBtn {
+  @include button-reset;
+  height: $button-height-lg;
+  padding: 0 24rpx;
+  background-color: $color-bg-card;
+  border: 1px solid $color-primary;
+  border-radius: $radius-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.cartBtn {
+  @include button-reset;
+  height: $button-height-lg;
+  padding: 0 24rpx;
+  background-color: $color-bg-input;
+  border: 1px solid $color-border;
+  border-radius: $radius-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.buyBtn {
+  @include button-reset;
+  height: $button-height-lg;
+  padding: 0 28rpx;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-text-white;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  border-radius: $radius-button;
+  border: none;
+
+  &:active {
+    opacity: 0.9;
+  }
+}
+
+.viewBtn {
+  @include button-reset;
+  height: $button-height-lg;
+  min-width: 280rpx;
+  background-color: $color-bg-input;
+  color: $color-text-tertiary;
+  font-size: $font-size-md;
+  border-radius: $radius-button;
+  border: 1px solid $color-border;
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+// ==== 收货地址选择弹窗 ====
+.editModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1500;
+  display: flex;
+  align-items: flex-end;
+}
+
+.editMask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.editPanel {
+  position: relative;
+  width: 100%;
+  max-height: 80vh;
+  background-color: $color-bg-card;
+  border-radius: 24rpx 24rpx 0 0;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 140rpx;
+}
+
+.editHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx $spacing-md;
+  border-bottom: 1px solid $color-divider;
+  flex-shrink: 0;
+}
+
+.editTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.editClose {
+  font-size: 36rpx;
+  color: $color-text-tertiary;
+  padding: 8rpx;
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.editBody {
+  padding: $spacing-md;
+}
+
+.addrPickerItem {
+  padding: $spacing-md;
+  margin-bottom: $spacing-sm;
+  background-color: $color-bg-input;
+  border-radius: $radius-md;
+  border: 1px solid $color-border;
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.addrPickerItemActive {
+  border-color: $color-primary;
+  background-color: rgba($color-primary, 0.05);
+}
+
+.addrPickerHead {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-bottom: 8rpx;
+}
+
+.addrPickerLabel {
+  font-size: 22rpx;
+  color: $color-primary;
+  background-color: rgba($color-primary, 0.1);
+  padding: 2rpx 12rpx;
+  border-radius: 6rpx;
+}
+
+.addrPickerContact {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.addrPickerFull {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-loose;
+}
+
+.addrPickerCheck {
+  font-size: 22rpx;
+  color: $color-primary;
+  margin-top: 8rpx;
+}
+
+.addrEmpty {
+  background-color: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-xl;
+  text-align: center;
+  box-shadow: $shadow-card;
+}
+
+.addrEmptyText {
+  font-size: $font-size-md;
+  color: $color-text-tertiary;
+}
+
+// ====== 弹窗通用 ======
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: flex-end;
+}
+
+.modalMask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalPanel {
+  position: relative;
+  width: 100%;
+  max-height: 80vh;
+  background-color: $color-bg-card;
+  border-radius: $radius-xl $radius-xl 0 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modalHd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-md;
+  border-bottom: 1px solid $color-divider;
+  flex-shrink: 0;
+}
+
+.modalTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.modalClose {
+  font-size: 36rpx;
+  color: $color-text-tertiary;
+  padding: 8rpx;
+  &:active { opacity: 0.7; }
+}
+
+.modalBody {
+  padding: $spacing-md;
+  flex-shrink: 1;
+}
+
+.modalFt {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: $spacing-md;
+  padding: $spacing-md;
+  border-top: 1px solid $color-divider;
+  flex-shrink: 0;
+}
+
+.modalCancel {
+  @include button-reset;
+  height: $button-height-md;
+  padding: 0 36rpx;
+  background-color: $color-bg-input;
+  border: 1px solid $color-border;
+  border-radius: $radius-button;
+  &:active { opacity: 0.8; }
+}
+
+.modalConfirm {
+  @include button-reset;
+  height: $button-height-md;
+  padding: 0 36rpx;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  border-radius: $radius-button;
+  &:active { opacity: 0.9; }
+}
+
+// ==== 协商弹窗 ====
+.negoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-sm 0;
+  border-bottom: 1px solid $color-divider;
+}
+
+.negoLabel {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+}
+
+.negoVal {
+  font-size: $font-size-md;
+  color: $color-text-secondary;
+}
+
+.negoInput {
+  flex: 1;
+  max-width: 360rpx;
+  height: 64rpx;
+  background-color: $color-bg-input;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  padding: 0 $spacing-sm;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  text-align: right;
+}
+
+.negoNoteRow {
+  display: flex;
+  align-items: center;
+  padding: $spacing-sm 0;
+
+  .negoInput {
+    text-align: left;
+  }
+}
+
+// ==== 购买确认弹窗 ====
+.buySummaryItem {
+  display: flex;
+  align-items: center;
+  padding: $spacing-sm 0;
+}
+
+.buySummaryImg {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: $radius-sm;
+  flex-shrink: 0;
+  background-color: $color-bg-input;
+}
+
+.buySummaryInfo {
+  flex: 1;
+  margin-left: $spacing-md;
+}
+
+.buySummaryName {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  @include text-ellipsis;
+  margin-bottom: 8rpx;
+}
+
+.buySummaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buySummaryPrice {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.buySummarySub {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-price;
+}
+
+.buyAddrRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-sm 0;
+  margin-top: $spacing-sm;
+  border-top: 1px solid $color-divider;
+}
+
+.buyAddrLabel {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+}
+
+.buyAddrVal {
+  font-size: $font-size-md;
+  color: $color-text-secondary;
+}
+
+.buyTotal {
+  flex: 1;
+  display: flex;
+  align-items: baseline;
+  gap: $spacing-xs;
+}
+
+.buyTotalLabel {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+}
+
+.buyTotalPrice {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-price;
+}

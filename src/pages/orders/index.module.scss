@@ -1,0 +1,239 @@
+@use '@/styles/variables.scss' as *;
+
+.ordersPage {
+  min-height: 100vh;
+  padding: 0 $page-padding;
+  padding-bottom: 120rpx;
+}
+
+.tabBar {
+  display: flex;
+  gap: $spacing-sm;
+  padding: $spacing-md 0;
+}
+
+.tab {
+  @include button-reset;
+  flex: 1;
+  height: $button-height-sm;
+  background-color: $color-bg-card;
+  color: $color-text-secondary;
+  font-size: $font-size-md;
+  border-radius: $radius-button;
+  border: 1px solid $color-border;
+
+  &:active {
+    opacity: 0.9;
+  }
+}
+
+.tabActive {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-text-white;
+  border-color: transparent;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 200rpx;
+}
+
+.emptyText {
+  font-size: $font-size-md;
+  color: $color-text-tertiary;
+  margin-top: $spacing-md;
+}
+
+.receiptSection {
+  margin-top: $spacing-lg;
+}
+
+.sectionTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+}
+
+.receiptCard {
+  background-color: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  margin-bottom: $spacing-sm;
+  border: 1px solid $color-border;
+}
+
+.receiptRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-xs;
+}
+
+.receiptLabel {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.receiptValue {
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  @include text-ellipsis;
+  max-width: 400rpx;
+}
+
+.syncBadge {
+  font-size: $font-size-xs;
+  padding: 4rpx 12rpx;
+  border-radius: $radius-round;
+}
+
+.synced {
+  background-color: rgba(0, 180, 42, 0.15);
+  color: #00b42a;
+}
+
+.notSynced {
+  background-color: rgba(255, 125, 0, 0.15);
+  color: #ff7d00;
+}
+
+.filterBar {
+  padding: $spacing-sm 0;
+}
+
+.filterChip {
+  display: inline-block;
+  padding: 8rpx 20rpx;
+  margin-right: 12rpx;
+  border-radius: 24rpx;
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+
+  &:active { opacity: 0.7; }
+}
+
+.filterChipActive {
+  background: rgba($color-primary, 0.1);
+  border-color: $color-primary;
+}
+
+.exportBtn {
+  @include button-reset;
+  padding: 8rpx 20rpx;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  background: $color-bg-card;
+
+  &:active { opacity: 0.7; }
+}
+
+// ====== 弹窗 ======
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.modalMask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modalPanel {
+  position: relative;
+  width: 100%;
+  max-height: 80vh;
+  background: $color-bg-card;
+  border-radius: 24rpx 24rpx 0 0;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 140rpx;
+}
+
+.modalHd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx $spacing-md;
+  border-bottom: 1px solid $color-divider;
+}
+
+.modalTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.modalClose {
+  font-size: 36rpx;
+  color: $color-text-tertiary;
+  padding: 8rpx;
+}
+
+.modalBody {
+  padding: $spacing-md;
+  overflow-y: auto;
+}
+
+.modalItem {
+  margin-bottom: $spacing-md;
+}
+
+.modalLabel {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-xs;
+  display: block;
+}
+
+.modalFt {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: $spacing-md;
+  padding: $spacing-md;
+  border-top: 1px solid $color-divider;
+  background: $color-bg-card;
+}
+
+.modalCancel {
+  @include button-reset;
+  flex: 1;
+  height: 80rpx;
+  border: 1px solid $color-border;
+  border-radius: $radius-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:active { opacity: 0.8; }
+}
+
+.modalConfirm {
+  @include button-reset;
+  flex: 2;
+  height: 80rpx;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  border-radius: $radius-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:active { opacity: 0.9; }
+}

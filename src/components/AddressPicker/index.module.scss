@@ -1,0 +1,107 @@
+@use '@/styles/variables.scss' as *;
+
+.pickerModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color-bg-card;
+  border-radius: 24rpx 24rpx 0 0;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 24rpx $spacing-md 16rpx;
+  border-bottom: 1px solid $color-divider;
+  flex-shrink: 0;
+}
+
+.cancel {
+  font-size: 28rpx;
+  color: $color-text-tertiary;
+  margin-bottom: 12rpx;
+  display: inline-block;
+
+  &:active { opacity: 0.7; }
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 26rpx;
+}
+
+.breadActive {
+  color: $color-primary-light;
+  font-weight: $font-weight-medium;
+}
+
+.breadInactive {
+  color: $color-text-tertiary;
+}
+
+.breadSep {
+  color: $color-text-disabled;
+  margin: 0 4rpx;
+}
+
+.list {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.item {
+  padding: 28rpx $spacing-md;
+  border-bottom: 1px solid $color-divider;
+
+  &:active {
+    background-color: rgba(212, 168, 67, 0.08);
+  }
+}
+
+.itemText {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+}
+
+.emptyArea {
+  padding: 80rpx 0;
+  text-align: center;
+}
+
+.emptyText {
+  font-size: $font-size-md;
+  color: $color-text-tertiary;
+}
+
+.loadingArea {
+  padding: 80rpx 0;
+  text-align: center;
+}
+
+.loadingText {
+  font-size: $font-size-md;
+  color: $color-text-tertiary;
+}

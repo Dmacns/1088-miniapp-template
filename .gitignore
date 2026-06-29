@@ -1,0 +1,33 @@
+node_modules/
+dist/
+.taro-cache/
+*.log
+.DS_Store
+
+# 隐私文件——绝对不能公开
+.auth/
+
+# 构建缓存
+.swc/
+.pai/
+
+# 旧 Taro 3 构建残留（根目录的 app.js 等）
+/app.js
+/app.json
+/app.wxss
+/pages/
+/utils/
+/templates/
+
+# 重复数据（src/data/ 已有正本）
+/static/
+/_towns_data_bak/
+
+# 非源码工具（测试脚本保留在 tools/ 内，但根目录的桥接脚本不提交）
+/1088_bridge.py
+/gdcl_mock.py
+/ws_proxy.py
+/start-proxy.bat
+/project.config.json
+/project.tt.json
+/babel.config.js

@@ -1,0 +1,144 @@
+.posterModal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: flex-end;
+}
+
+.posterMask {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.posterPanel {
+  position: relative;
+  width: 100%;
+  background: #161b22;
+  border-radius: 24rpx 24rpx 0 0;
+  padding-bottom: 140rpx;
+}
+
+.posterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx 32rpx;
+  border-bottom: 1px solid #30363d;
+}
+
+.posterTitle {
+  font-size: 32rpx;
+  color: #f5d78e;
+  font-weight: 600;
+}
+
+.posterClose {
+  font-size: 36rpx;
+  color: #8b949e;
+  padding: 8rpx;
+}
+
+.posterPreview {
+  padding: 32rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.posterCard {
+  width: 100%;
+  max-width: 500rpx;
+  aspect-ratio: 375 / 600;
+  background: linear-gradient(180deg, #1a1a2e, #0d1117);
+  border: 3px solid #b8860b;
+  border-radius: 16rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40rpx 32rpx;
+  gap: 16rpx;
+}
+
+.posterFire {
+  font-size: 72rpx;
+}
+
+.posterName {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #f5d78e;
+  text-align: center;
+}
+
+.posterDivider {
+  width: 120rpx;
+  height: 2rpx;
+  background: rgba(184, 134, 11, 0.4);
+}
+
+.posterUser {
+  font-size: 28rpx;
+  color: #c9d1d9;
+}
+
+.posterId {
+  font-size: 24rpx;
+  color: #8b949e;
+}
+
+.posterDesc {
+  font-size: 24rpx;
+  color: #8b949e;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.posterBrand {
+  font-size: 28rpx;
+  color: #d4a853;
+  font-weight: 600;
+  margin-top: 20rpx;
+}
+
+.posterFooter {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  display: flex;
+  gap: 24rpx;
+  padding: 24rpx 32rpx;
+  border-top: 1px solid #30363d;
+  background: #161b22;
+}
+
+.posterCancel {
+  flex: 1;
+  height: 80rpx;
+  border: 1px solid #30363d;
+  border-radius: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.posterCancelText {
+  font-size: 28rpx;
+  color: #8b949e;
+}
+
+.posterSave {
+  flex: 2;
+  height: 80rpx;
+  background: linear-gradient(135deg, #b8860b, #d4a853);
+  border-radius: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.posterSaveText {
+  font-size: 28rpx;
+  color: #fff;
+  font-weight: 600;
+}

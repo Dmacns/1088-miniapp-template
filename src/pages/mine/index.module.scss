@@ -1,0 +1,476 @@
+@use '@/styles/variables.scss' as *;
+
+.minePage {
+  min-height: 100vh;
+  padding: 0 $page-padding;
+  padding-bottom: 120rpx;
+}
+
+// ==== DID & Chain ====
+.identityCard {
+  background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
+  border: 1px solid $color-primary;
+  border-radius: $radius-lg;
+  padding: $spacing-xl;
+  margin: $spacing-md 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.didLabel {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  margin-bottom: $spacing-xs;
+}
+
+.didValue {
+  font-size: $font-size-md;
+  color: $color-primary-light;
+  font-weight: $font-weight-medium;
+  word-break: break-all;
+  text-align: center;
+}
+
+.chainCard {
+  background-color: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  margin-bottom: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.chainRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-sm 0;
+}
+
+.chainLabel {
+  font-size: $font-size-md;
+  color: $color-text-secondary;
+}
+
+.chainValue {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+}
+
+// ==== Address Sections ====
+.addrSection {
+  margin-bottom: $spacing-lg;
+}
+
+.addrSectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-sm;
+}
+
+.sectionTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.addrAddBtn {
+  @include button-reset;
+  height: 48rpx;
+  padding: 0 24rpx;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  border-radius: 24rpx;
+
+  &:active { opacity: 0.9; }
+}
+
+.addrAddBtnText {
+  font-size: 24rpx;
+  color: #fff;
+}
+
+.addrCard {
+  background-color: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  margin-bottom: $spacing-sm;
+  box-shadow: $shadow-card;
+  display: flex;
+  align-items: center;
+}
+
+.addrInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.addrHeadRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8rpx;
+  flex-wrap: wrap;
+  gap: 12rpx;
+}
+
+.labelInput {
+  width: 160rpx;
+  height: 44rpx;
+  background-color: transparent;
+  border: 1px solid $color-border;
+  border-radius: 8rpx;
+  padding: 0 12rpx;
+  font-size: 22rpx;
+  color: $color-primary-light;
+  display: inline-block;
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.contactName {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+}
+
+.contactPhone {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.addrFull {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  line-height: 1.5;
+}
+
+.addrActions {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+  margin-left: $spacing-sm;
+  flex-shrink: 0;
+}
+
+.addrAction {
+  font-size: 24rpx;
+  color: $color-primary-light;
+  padding: 4rpx 0;
+  &:active { opacity: 0.7; }
+}
+
+.addrActionDel {
+  font-size: 24rpx;
+  color: $color-error;
+  padding: 4rpx 0;
+  &:active { opacity: 0.7; }
+}
+
+.addrEmpty {
+  background-color: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-xl;
+  text-align: center;
+  box-shadow: $shadow-card;
+}
+
+.addrEmptyText {
+  font-size: $font-size-md;
+  color: $color-text-tertiary;
+}
+
+// ==== Menu ====
+.menuCard {
+  background-color: $color-bg-card;
+  border-radius: $radius-md;
+  overflow: hidden;
+  box-shadow: $shadow-card;
+}
+
+.menuItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-lg $spacing-md;
+  border-bottom: 1px solid $color-divider;
+  &:last-child { border-bottom: none; }
+  &:active { background-color: $color-bg-hover; }
+}
+
+.menuText {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+}
+
+.menuArrow {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.seedPanel {
+  padding: 0 24rpx 24rpx;
+}
+
+.seedInput {
+  width: 100%;
+  height: $button-height-md;
+  background-color: $color-bg-input;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  padding: 0 $spacing-md;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  margin-top: $spacing-sm;
+}
+
+.actionBtn {
+  @include button-reset;
+  width: 100%;
+  height: $button-height-lg;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  border-radius: $radius-button;
+  border: none;
+  margin-top: $spacing-lg;
+  &:active { opacity: 0.9; transform: scale(0.98); }
+}
+
+.actionBtnText {
+  font-size: $font-size-lg;
+  color: #fff;
+  font-weight: $font-weight-medium;
+}
+
+.dangerBtn {
+  @include button-reset;
+  width: 100%;
+  height: $button-height-md;
+  background-color: transparent;
+  border: 1px solid $color-error;
+  border-radius: $radius-button;
+  margin-top: $spacing-md;
+  &:active { opacity: 0.9; }
+}
+
+.dangerBtnText {
+  font-size: $font-size-md;
+  color: $color-error;
+}
+
+// ==== 大赛登记 ====
+.regCard {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+  border: 2px solid #b8860b;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  &:active { opacity: 0.9; transform: scale(0.99); }
+}
+
+.regCardInner {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.regIcon {
+  font-size: 48rpx;
+  flex-shrink: 0;
+}
+
+.regInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.regTitle {
+  font-size: 30rpx;
+  font-weight: $font-weight-semibold;
+  color: #f5d78e;
+  display: block;
+  margin-bottom: 6rpx;
+}
+
+.regSub {
+  font-size: 24rpx;
+  color: rgba(245, 215, 142, 0.7);
+  display: block;
+  line-height: 1.4;
+}
+
+.regArrow {
+  font-size: 44rpx;
+  color: #b8860b;
+  flex-shrink: 0;
+}
+
+.regPosterBtn {
+  margin-top: 12rpx;
+  padding: 10rpx 0;
+  text-align: center;
+  border-top: 1px solid rgba(184, 134, 11, 0.2);
+  &:active { opacity: 0.7; }
+}
+
+// ==== Address Editor Modal ====
+.editModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1500;
+  display: flex;
+  align-items: flex-end;
+}
+
+.editMask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.editPanel {
+  position: relative;
+  width: 100%;
+  max-height: 80vh;
+  background-color: $color-bg-card;
+  border-radius: 24rpx 24rpx 0 0;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 140rpx;
+}
+
+.editHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx $spacing-md;
+  border-bottom: 1px solid $color-divider;
+  flex-shrink: 0;
+}
+
+.editTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.editClose {
+  font-size: 36rpx;
+  color: $color-text-tertiary;
+  padding: 8rpx;
+  &:active { opacity: 0.7; }
+}
+
+.editBody {
+  padding: $spacing-md;
+  max-height: calc(80vh - 200rpx);
+  overflow-y: auto;
+}
+
+.editGroup {
+  margin-bottom: $spacing-md;
+}
+
+.editLabel {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-xs;
+  display: block;
+}
+
+.editInput {
+  width: 100%;
+  height: 72rpx;
+  background-color: $color-bg-input;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  padding: 0 $spacing-md;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  box-sizing: border-box;
+}
+
+.editPicker {
+  width: 100%;
+  min-height: 72rpx;
+  background-color: $color-bg-input;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  padding: 16rpx $spacing-md;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  &:active { opacity: 0.8; }
+}
+
+.pickerTextSelected {
+  font-size: 28rpx;
+  color: $color-text-primary;
+}
+
+.pickerTextPlaceholder {
+  font-size: 28rpx;
+  color: $color-text-tertiary;
+}
+
+.pickerArrow {
+  font-size: 28rpx;
+  color: $color-text-tertiary;
+}
+
+.editFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: $spacing-md;
+  padding: $spacing-md;
+  border-top: 1px solid $color-divider;
+  background-color: $color-bg-card;
+}
+
+.editCancel {
+  @include button-reset;
+  flex: 1;
+  height: 80rpx;
+  border: 1px solid $color-border;
+  border-radius: $radius-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:active { opacity: 0.8; }
+}
+
+.editCancelText {
+  font-size: 28rpx;
+  color: $color-text-tertiary;
+}
+
+.editConfirm {
+  @include button-reset;
+  flex: 2;
+  height: 80rpx;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  border-radius: $radius-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:active { opacity: 0.9; }
+}
+
+.editConfirmText {
+  font-size: 28rpx;
+  color: #fff;
+}

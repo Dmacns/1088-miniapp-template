@@ -1,0 +1,73 @@
+// ============================================
+// 1088 暗金商务主题 — 优化版
+// ============================================
+
+// 品牌色：暗金
+$color-primary: #b8860b;
+$color-primary-light: #d4a843;
+$color-primary-lighter: #f5d78e;
+$color-primary-dark: #8b6914;
+
+// 功能色
+$color-success: #16a34a;
+$color-warning: #ea580c;
+$color-error: #dc2626;
+$color-info: #2563eb;
+
+// 背景色
+$color-bg-page: #f8f9fa;
+$color-bg-card: #ffffff;
+$color-bg-hover: #f1f5f9;
+$color-bg-input: #f8f9fa;
+
+// 文本色 — 三层级
+$color-text-primary: #1e293b;
+$color-text-secondary: #64748b;
+$color-text-tertiary: #94a3b8;
+$color-text-disabled: #cbd5e1;
+$color-text-white: #ffffff;
+
+// 边框
+$color-border: #e2e8f0;
+$color-divider: #f1f5f9;
+
+// 设计 Token
+$radius-sm: 8rpx;
+$radius-md: 12rpx;
+$radius-lg: 16rpx;
+$radius-button: 24rpx;
+$shadow-card: 0 2rpx 8rpx rgba(0,0,0,0.06);
+$shadow-card-hover: 0 4rpx 16rpx rgba(0,0,0,0.1);
+$shadow-button: 0 2rpx 6rpx rgba(184,134,11,0.3);
+
+// 间距
+$spacing-xs: 8rpx;
+$spacing-sm: 12rpx;
+$spacing-md: 20rpx;
+$spacing-lg: 28rpx;
+$spacing-xl: 40rpx;
+
+// 字体
+$font-size-xs: 22rpx;
+$font-size-sm: 24rpx;
+$font-size-md: 28rpx;
+$font-size-lg: 32rpx;
+$font-size-xl: 40rpx;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// 业务色
+$color-price: #b8860b;
+$color-tag-bg: rgba(184,134,11,0.1);
+$color-chain-online: #16a34a;
+$color-chain-offline: #ea580c;
+
+// 按钮
+$button-height-sm: 56rpx;
+$button-height-md: 72rpx;
+$button-height-lg: 88rpx;
+
+// 页面
+$page-padding: 24rpx;
